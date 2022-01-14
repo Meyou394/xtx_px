@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            margin: 0 auto;
+        }
+        
+        .banner {
+            position: relative;
+            width: 1240px;
+            height: 200px;
+            margin-top: 100px;
+            overflow: hidden;
+            background-color: aquamarine;
+        }
+        
+        .banner ul {
+            width: 300%;
+            position: absolute;
+            list-style: none;
+        }
+        
+        .banner li {
+            float: left;
+            text-align: center;
+            line-height: 200px;
+            font-size: 25px;
+            width: 240px;
+            height: 200px;
+            margin-right: 10px;
+            background-color: bisque;
+        }
+        
+        .banner li:nth-child(2n) {
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner container">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+    <script>
+        let ul = document.querySelector('ul');
+        var li = document.querySelectorAll('li')
+        ul.innerHTML += ul.innerHTML
+        console.log(li[0].offsetWidth);
+
+        let left = 0;
+        setInterval(function() {
+            left += 1;
+            if (left > 250 * 6) {
+                left = 0
+            }
+            ul.style.left = -left + 'px';
+        }, 10)
+    </script>
+</body>
+
+</html>
